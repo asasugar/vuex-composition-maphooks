@@ -1,0 +1,44 @@
+{
+  "name": "vuex-composition-maphooks",
+  "version": "1.0.0",
+  "description": "To support vuex-composition map* helper functions",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asasugar/vuex-composition-maphooks.git"
+  },
+  "author": "Xiongjie.Xue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asasugar/vuex-composition-maphooks/issues"
+  },
+  "homepage": "https://github.com/asasugar/vuex-composition-maphooks#readme",
+  "keywords": [
+    "useState",
+    "useGetters",
+    "useMutations",
+    "useActions",
+    "vuex",
+    "vue-composition-api",
+    "vuex-composition-api",
+    "composition-api",
+    "maphooks",
+    "vuex-maphooks"
+  ],
+  "peerDependencies": {
+    "vue": "^3.2.25",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "rollup": "^2.66.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "rollup-plugin-uglify": "^6.0.4",
+    "typescript": "^4.5.5"
+  }
+}
