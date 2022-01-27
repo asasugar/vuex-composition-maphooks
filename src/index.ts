@@ -1,9 +1,9 @@
 /*
- * @Description: vuex-compotision-helpers【修改至vuex helpers】https://github.com/vuejs/vuex/blob/main/src/helpers.js
+ * @Description: vuex-composition-maphooks【modified to vuex helpers】https://github.com/vuejs/vuex/blob/main/src/helpers.js
  * @Author: Xiongjie.Xue(xxj95719@gmail.com)
  * @Date: 2022-01-20 17:01:13
  * @LastEditors: Xiongjie.Xue(xxj95719@gmail.com)
- * @LastEditTime: 2022-01-27 16:29:20
+ * @LastEditTime: 2022-01-27 18:14:13
  */
 import { Store, useStore } from 'vuex';
 
@@ -190,8 +190,7 @@ export const createNamespacedHelpers = (namespace: INamespace): object => {
     useActions: useActions.bind(null, namespace),
   };
 };
-
-/**
+/** Determine whether it is an Object
  * @param {object} [obj]
  * @returns {*}  {boolean}
  */

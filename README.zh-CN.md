@@ -1,15 +1,13 @@
 # vuex-composition-maphooks
 To support vuex-composition map* helper functions
+[English Document](https://github.com/asasugar/vuex-composition-maphooks/blob/master/README.md)
 
-
-
-[中文文档](https://github.com/asasugar/vuex-composition-maphooks/blob/master/README.zh-CN.md)
 ## useState
-- `namespace` parameter is not required, it is required if `modules` is set to `namespaced: true`
-- `states` optional type: Array | Object (supports custom states method name)
+- `namespace` 参数非必填，如果 `modules` 设置 `namespaced: true` 时必填
+- `states` 可选类型：数组 ｜ 对象 （支持自定义states方法名）
 
 
-- states using Array usage
+- states 使用数组的用法
 
 ```vue
 <script setup lang="ts">
@@ -22,7 +20,7 @@ const user = ref(userinfo());
 
 ```
 
-- states using Object usage
+- states 使用对象的用法
 
 ```js
 ...
@@ -32,10 +30,10 @@ const user = ref(d());
 
 ## useGetters
 
-- `namespace` parameter is not required, it is required if `modules` is set to `namespaced: true`
-- `getters` optional type: Array | Object (supports custom getters method name)
+- `namespace` 参数非必填，如果 `modules` 设置 `namespaced: true` 时必填
+- `getters` 可选类型：数组 ｜ 对象 （支持自定义getters方法名）
 
-- getters using Array usage
+- getters 使用数组的用法
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue';
@@ -49,7 +47,7 @@ const b = ref(doList());
 </script>
 ```
 
-- getters using Object usage
+- getters 使用对象的用法
 ```js
 ...
 const { d, e } = useGetters('A',{ unDoList: 'd', doList: 'e'});
@@ -65,10 +63,11 @@ const b = ref(e());
 
 ## useMutations
 
-- `namespace` parameter is not required, it is required if `modules` is set to `namespaced: true`
-- `mutations` optional type: Array | Object (supports custom mutations method name)
+- `namespace` 参数非必填，如果 `modules` 设置 `namespaced: true` 时必填
+- `mutations` 可选类型：数组 ｜ 对象 （支持自定义mutations方法名）
 
-- mutations using Array usage
+
+- mutations 使用数组的用法
 
 ```vue
 <script setup lang="ts">
@@ -82,7 +81,7 @@ const { INCREMENT } = useMutations(['A/INCREMENT']);
 </script>
 
 ```
-- mutations using Object usage
+- mutations 使用对象的用法
 
 ```js
 ...
@@ -93,26 +92,26 @@ const { d } = useMutations({ 'A/INCREMENT': 'd'});
 ```
 
 ## useActions
-- `namespace` parameter is not required, it is required if `modules` is set to `namespaced: true`
-- `actions` optional type: Array | Object (supports custom actions method name)
+- `namespace` 参数非必填，如果 `modules` 设置 `namespaced: true` 时必填
+- `actions` 可选类型：数组 ｜ 对象 （支持自定义actions方法名）
 
 
-- actions using Array usage
+- actions 使用数组的用法
 
 ```vue
 <script setup lang="ts">
 import { useActions } from 'vuex-composition-maphooks';
 
-// Scenario 1: Modules A and B do not set a clear space
+// 场景一： A、B模块都不设置命明空间时
 const { go, back } = useActions(['go','back']);
 
-// Scenario 2: Module A is set to indicate space, and module B is not set to indicate space
+// 场景二：A模块设置命明空间，B模块不设置命明空间
 const { go, back } = useActions(['A/go', 'back']);
 // or
 const { go } = useActions('A', ['go']);
 const { back } = useActions(['back']);
 
-// Scenario 3: Both modules A and B are set to indicate the space
+// 场景三：A、B模块都设置命明空间
 const { go, back } = useActions(['A/go', 'B/back']);
 // or
 const { go } = useActions('A', ['go']);
@@ -120,21 +119,20 @@ const { back } = useActions('B', ['back']);
 </script>
 ```
 
-- actions using Object usage
+- actions 使用对象的用法
 
 ```js
 ...
-
-// Scenario 1
+// 场景一： A、B模块不设置命明空间时
 const { d, e } = useActions({ go: 'd', back: 'e' });
 
-// Scenario 2
+// 场景二：A模块设置命明空间，B模块不设置命明空间
 const { d, e } = useActions({ 'A/go': 'd', back: 'e' });
 // or
 const { d } = useActions({ 'A/go': 'd' }); 
 const { e } = useActions({ back: 'd' });
 
-// Scenario 3
+// 场景三：A、B模块都设置命明空间
 const { d, e } = useActions({ 'A/go': 'd', 'B/back': 'e' });
 // or
 const { d } = useActions({ 'A/go': 'd' }); 
@@ -143,7 +141,7 @@ const { e } = useActions({ 'B/back': 'e' });
 
 ```
 
-## Summary
-- `namespace` is not required, but setting `namespaced: true` is required, and setting `namespaced` is highly recommended!!!
-- The `key` of the second parameter of `useState` cannot be a string concatenating `modules name`, it must be the specified `state`
-- `useGetters` , `useMutations` , `useActions` The `key` of the second parameter can be concatenated as a string of `modules name`, as shown in the above example
+## 总结
+- `namespace` 非必填，但是设置 `namespaced: true` 必填，并且强烈推荐设置 `namespaced` !!!
+- `useState` 第二个参数的 `key` 不能是拼接 `modules name` 的字符串，必须是指定的`state`
+- `useGetters` 、`useMutations` 、 `useActions` 第二个参数的 `key` 可以拼接是 `modules name` 的字符串，如上示例
