@@ -1,6 +1,14 @@
 # vuex-composition-maphooks
 To support vuex-composition map* helper functions
 
+```
+yarn add vuex-composition-maphooks
+```
+```js
+// *.vue
+import { useState, useGetters, useMutations, useActions } from 'vuex-composition-maphooks';
+...
+```
 
 
 [中文文档](https://github.com/asasugar/vuex-composition-maphooks/blob/master/README.zh-CN.md)

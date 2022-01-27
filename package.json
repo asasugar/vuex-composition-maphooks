@@ -1,6 +1,6 @@
 {
   "name": "vuex-composition-maphooks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "To support vuex-composition map* helper functions",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",

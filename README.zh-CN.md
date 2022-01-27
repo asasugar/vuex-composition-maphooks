@@ -2,6 +2,16 @@
 To support vuex-composition map* helper functions
 [English Document](https://github.com/asasugar/vuex-composition-maphooks/blob/master/README.md)
 
+
+```
+yarn add vuex-composition-maphooks
+```
+```js
+// *.vue
+import { useState, useGetters, useMutations, useActions } from 'vuex-composition-maphooks';
+...
+```
+
 ## useState
 - `namespace` 参数非必填，如果 `modules` 设置 `namespaced: true` 时必填
 - `states` 可选类型：数组 ｜ 对象 （支持自定义states方法名）
