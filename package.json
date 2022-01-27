@@ -23,11 +23,12 @@
     "useMutations",
     "useActions",
     "vuex",
-    "vue-composition-api",
     "vuex-composition-api",
+    "vue-composition-api",
     "composition-api",
     "maphooks",
-    "vuex-maphooks"
+    "vuex-maphooks",
+    "vuex-composition-maphooks"
   ],
   "peerDependencies": {
     "vue": "^3.2.25",
